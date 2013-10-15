@@ -5,19 +5,22 @@ namespace CoypuDriver
 {
     public class Bootstrap
     {
-        public static BrowserSession CurrentBrowserSession { get; private set; }
+        private static BrowserSession _browserSession;
 
-        public static BrowserSession GetBrowserSession()
-        {
-            if (CurrentBrowserSession == null)
+        public static BrowserSession CurrentBrowserSession {
+            get
             {
-                CurrentBrowserSession = new BrowserSession(new SessionConfiguration()
+                if (_browserSession == null)
+                {
+                    _browserSession = new BrowserSession(new SessionConfiguration()
                     {
                         AppHost = "www.rightmove.co.uk",
                         Browser = Browser.Firefox,
                     });
+                }
+                return _browserSession;
+                
             }
-            return CurrentBrowserSession;
         }
     }
 }

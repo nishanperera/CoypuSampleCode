@@ -1,11 +1,10 @@
 ﻿namespace CoypuDriver.Pages
 {
-    public class SearchPage
+    public class SearchPage:Bootstrap
     {
         public static bool IsAt()
         {
-            var browser = Bootstrap.GetBrowserSession();
-            return browser.FindFieldset("primarycriteria").Exists();
+            return CurrentBrowserSession.FindFieldset("primarycriteria").Exists();
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using CoypuDriver.Pages;
 using NUnit.Framework;
-using CoypuDriver;
 
 namespace CustomerUITests.Pages
 {
@@ -11,7 +10,7 @@ namespace CustomerUITests.Pages
         {
             HomePage.Visit();
             
-            HomePage.SearchWith("croydon")
+            HomePage.SearchWith("Croydon")
                      .Search();
 
             Assert.IsTrue(SearchPage.IsAt());
